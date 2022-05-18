@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 
 const AddTasks = () => {
     const [user] = useAuthState(auth);
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
     if (errors) {
         if (errors?.taskName) {
             toast.error(`${errors.taskName.message}`, { id: "taskNameErr" });
@@ -31,6 +31,7 @@ const AddTasks = () => {
             .then(data => {
                 if (data.insertedId) {
                     toast.success("Task added", { id: "taskAdd" });
+                    reset();
                 }
             })
     }
