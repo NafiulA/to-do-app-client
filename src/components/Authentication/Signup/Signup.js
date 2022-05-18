@@ -87,8 +87,11 @@ const Signup = () => {
                                 }
                             })} type="password" placeholder="Your Password" class="input input-bordered w-full max-w-xs" />
                         </div>
-                        <input type="submit" className=' w-full max-w-xs btn btn-primary mt-3' />
+                        <input type="submit" className=' w-full max-w-xs btn btn-primary mt-3' value="Sign Up" />
                     </form>
+                    <p className='text-center text-sm'>Already have an account? <span
+                        onClick={() => { navigate("/login") }} className='text-primary cursor-pointer'>
+                        Please Login</span></p>
                 </div>
             </div>
         </div>
