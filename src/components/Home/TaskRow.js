@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 
 const TaskRow = ({ task, index, refetch }) => {
     const handleComplete = (id) => {
-        fetch(`http://localhost:5000/tasks?id=${id}`, {
+        fetch(`https://still-badlands-39035.herokuapp.com/tasks?id=${id}`, {
             method: "PUT"
         })
             .then(res => res.json())
@@ -15,16 +15,19 @@ const TaskRow = ({ task, index, refetch }) => {
             });
     }
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/tasks?id=${id}`, {
-            method: "DELETE"
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount) {
-                    toast.success("Task deleted", { id: "taskDelete" });
-                    refetch();
-                }
+        const consent = window.confirm("Are you sure?");
+        if (consent) {
+            fetch(`https://still-badlands-39035.herokuapp.com/tasks?id=${id}`, {
+                method: "DELETE"
             })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount) {
+                        toast.success("Task deleted", { id: "taskDelete" });
+                        refetch();
+                    }
+                })
+        }
     }
     return (
         <tr>

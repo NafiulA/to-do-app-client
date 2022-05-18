@@ -43,13 +43,13 @@ const Login = () => {
     }
     return (
         <div className='flex justify-center items-center min-h-screen'>
-            <div class="card w-full max-w-sm bg-base-100 shadow-xl">
-                <div class="card-body">
-                    <h2 class="text-center text-2xl">Login</h2>
+            <div className="card w-full max-w-sm bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h2 className="text-center text-2xl">Login</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Email</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Email</span>
                             </label>
                             <input {...register("email", {
                                 required: "Email is Require",
@@ -57,18 +57,18 @@ const Login = () => {
                                     value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                                     message: "Invalid email"
                                 }
-                            })} type="email" placeholder="Email Address" class="input input-bordered w-full max-w-xs" />
+                            })} type="email" placeholder="Email Address" className="input input-bordered w-full max-w-xs" />
                         </div>
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Password</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Password</span>
                             </label>
                             <input {...register("password", {
                                 required: "Password is required", minLength: {
                                     value: 8,
                                     message: "Please use at least 8 character"
                                 }
-                            })} type="password" placeholder="Your Password" class="input input-bordered w-full max-w-xs" />
+                            })} type="password" placeholder="Your Password" className="input input-bordered w-full max-w-xs" />
                         </div>
                         <input type="submit" className=' w-full max-w-xs btn btn-primary mt-3' value="Login" />
                     </form>

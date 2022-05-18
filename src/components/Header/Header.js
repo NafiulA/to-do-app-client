@@ -7,14 +7,14 @@ import auth from '../../firebase.init';
 const Header = () => {
     const [user] = useAuthState(auth);
     return (
-        <div class="navbar">
-            <div class="navbar-start">
-                <Link to="/" class="btn btn-ghost normal-case text-xl">To-Do-App</Link>
+        <div className="navbar">
+            <div className="navbar-start">
+                <Link to="/" className="btn btn-ghost normal-case text-xl">To-Do-App</Link>
             </div>
-            <div class="navbar-end">
+            <div className="navbar-end">
                 {user ?
-                    <button onClick={() => { signOut(auth) }} class="btn btn-primary btn-sm mr-5">Log Out</button> : <Link to="/login" class="btn btn-primary btn-sm mr-5">Login</Link>}
-                <label for="homeDashboard" class="btn btn-primary btn-sm drawer-button lg:hidden">
+                    <button onClick={() => { signOut(auth) }} className="btn btn-primary btn-sm mr-5">Log Out</button> : <Link to="/login" className="btn btn-primary btn-sm mr-5">Login</Link>}
+                <label htmlFor="homeDashboard" className="btn btn-primary btn-sm drawer-button lg:hidden">
                     Dashboard</label>
             </div>
         </div>

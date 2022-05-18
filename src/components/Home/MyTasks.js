@@ -7,7 +7,7 @@ import TaskRow from './TaskRow';
 
 const MyTasks = () => {
     const [user] = useAuthState(auth);
-    const { data: tasks, isLoading, refetch } = useQuery("tasks", () => fetch(`http://localhost:5000/tasks/${user?.email}`).then(res => res.json()));
+    const { data: tasks, isLoading, refetch } = useQuery("tasks", () => fetch(`https://still-badlands-39035.herokuapp.com/tasks/${user?.email}`).then(res => res.json()));
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -15,8 +15,8 @@ const MyTasks = () => {
         <div>
             <h3 className='text-xl p-2'>My Tasks</h3>
             <div>
-                <div class="overflow-x-auto">
-                    <table class="table w-full">
+                <div className="overflow-x-auto">
+                    <table className="table w-full">
                         <thead>
                             <tr>
                                 <th>#</th>

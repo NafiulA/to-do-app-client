@@ -21,7 +21,7 @@ const AddTasks = () => {
             task: data.taskName,
             description: data.taskDescription
         }
-        fetch("http://localhost:5000/tasks", {
+        fetch("https://still-badlands-39035.herokuapp.com/tasks", {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
@@ -41,23 +41,23 @@ const AddTasks = () => {
             <div className='pl-2'>
                 <form onSubmit={handleSubmit(onSubmit)}>
 
-                    <div class="form-control w-full max-w-xs">
-                        <label class="label">
-                            <span class="label-text">Email</span>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Email</span>
                         </label>
-                        <input {...register("email", { value: user?.email })} type="email" disabled class="input input-bordered w-full max-w-xs" />
+                        <input {...register("email", { value: user?.email })} type="email" disabled className="input input-bordered w-full max-w-xs" />
                     </div>
-                    <div class="form-control w-full max-w-xs">
-                        <label class="label">
-                            <span class="label-text">Task Name</span>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Task Name</span>
                         </label>
-                        <input {...register("taskName", { required: "Task Name is required" })} type="text" placeholder='Task Name' class="input input-bordered w-full max-w-xs" />
+                        <input {...register("taskName", { required: "Task Name is required" })} type="text" placeholder='Task Name' className="input input-bordered w-full max-w-xs" />
                     </div>
-                    <div class="form-control w-full max-w-xs">
-                        <label class="label">
-                            <span class="label-text">Task Description</span>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Task Description</span>
                         </label>
-                        <input {...register("taskDescription", { required: "Task description is required" })} type="text" placeholder='Task Description' class="input input-bordered w-full max-w-xs" />
+                        <input {...register("taskDescription", { required: "Task description is required" })} type="text" placeholder='Task Description' className="input input-bordered w-full max-w-xs" />
                     </div>
                     <input type="submit" className="btn btn-primary w-full max-w-xs mt-3" value="Add Task" />
                 </form>
