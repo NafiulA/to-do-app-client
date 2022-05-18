@@ -1,3 +1,4 @@
+import { Toaster } from 'react-hot-toast';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './components/Authentication/Login/Login';
@@ -19,6 +20,10 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
       </Routes>
+      <Toaster
+        position="top-right"
+        reverseOrder={false}
+      />
     </div>
   );
 }
